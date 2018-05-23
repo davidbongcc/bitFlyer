@@ -4,4 +4,3 @@ class Transaction:
         self.index = index
         self.size = size
         self.fee = fee
-   
