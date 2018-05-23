@@ -1,33 +1,52 @@
 # Sorting 
 class Algorithms:
 
-    def __init__(self):
-        pass
+    def __init__(self,data):
+        self.data = data
 
-    @staticmethod
-    def theSort(data):
-        i = 0
-        j = len(data) -1
+    def runSort(self):
+        self.theSort(self.data,0,len(self.data)-1)
+        print(self.data)
+
+    
+    def theSort(self,x,left,right):
+        i = left
+        j = right
         p = int(i+j/2)
-        pivot = data[p]
-        print(int(pivot))
-        left = 0
-        right = len(data) -1
+        pivot = x[p]
+        temp =0
+        # print(int(pivot))
+ 
 
         while True:
-            if(i>=j):
-                break
+            
             while True:
-                if((data[i]<pivot) and (i < right)):
+                if((x[i]<pivot) and (i < right)):
                     i+=1
                 else:
                     break
             
             while True:
-                if((pivot < data[j]) and (j > left):
+                if((pivot < x[j]) and (j > left)):
                     j-=1
                 else:
                     break
+            if(i<=j):
+                temp=x[i]
+                x[i] =x[j]
+                x[j] =temp
+                i+=1
+                j-=1
+
+            if((i>j)or (i==j)):
+                break
+        
+        if(left < j):
+            self.theSort(x,left,j)
+        if(i < right):
+            self.theSort(x,i,right)
+
+        
 
         
 
