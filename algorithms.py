@@ -1,4 +1,4 @@
-# Sorting 
+#Quick Sort algorith in Python 
 class Algorithms:
 
     def __init__(self,data):
@@ -15,9 +15,7 @@ class Algorithms:
         p = int(i+j/2)
         pivot = x[p]
         temp =0
-        # print(int(pivot))
  
-
         while True:
             
             while True:
